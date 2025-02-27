@@ -1,247 +1,304 @@
-.poppins-thin {
-    font-family: "Poppins", serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .poppins-extralight {
-    font-family: "Poppins", serif;
-    font-weight: 200;
-    font-style: normal;
-  }
-  
-  .poppins-light {
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  .poppins-regular {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .poppins-medium {
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .poppins-semibold {
-    font-family: "Poppins", serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .poppins-bold {
-    font-family: "Poppins", serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .poppins-extrabold {
-    font-family: "Poppins", serif;
-    font-weight: 800;
-    font-style: normal;
-  }
-  
-  .poppins-black {
-    font-family: "Poppins", serif;
-    font-weight: 900;
-    font-style: normal;
-  }
-  
-  .poppins-thin-italic {
-    font-family: "Poppins", serif;
-    font-weight: 100;
-    font-style: italic;
-  }
-  
-  .poppins-extralight-italic {
-    font-family: "Poppins", serif;
-    font-weight: 200;
-    font-style: italic;
-  }
-  
-  .poppins-light-italic {
-    font-family: "Poppins", serif;
-    font-weight: 300;
-    font-style: italic;
-  }
-  
-  .poppins-regular-italic {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .poppins-medium-italic {
-    font-family: "Poppins", serif;
-    font-weight: 500;
-    font-style: italic;
-  }
-  
-  .poppins-semibold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 600;
-    font-style: italic;
-  }
-  
-  .poppins-bold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
-  .poppins-extrabold-italic {
-    font-family: "Poppins", serif;
-    font-weight: 800;
-    font-style: italic;
-  }
-  
-  .poppins-black-italic {
-    font-family: "Poppins", serif;
-    font-weight: 900;
-    font-style: italic;
-  }
+/* General Styles */
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-  *{
-    font-family: 'poppins', sans-serif ;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
-  header {
-    background: #f0f0f0;
-    width: 100%;
-    position: fixed;
-    z-index: 999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 200px;
-  }
-  .logo {
-    text-decoration: none;
-    color:#3a6cf4;
-    text-transform: uppercase;
-    font-weight: 700;
-    font: size 1.8em;
-  }
+body {
+  background: #1a1a2e;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden; /* Prevent scrolling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .navigation a{
-    text-decoration: none;
-    color:#3a6cf4;
-    font-size: 1.1em;
-    font-weight: 500;
-    padding-left: 30px; 
-  }
+/* Header Navigation */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+}
 
-  .navigation a:hover {
-    color: #601cfc;
+.logo {
+  color: #3a6cf4;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.navigation a {
+  color: #3a6cf4;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #fff;
+}
+
+/* Fullscreen Background */
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Moves content to the left */
+  text-align: left;
+  padding-left: 10%; /* Adjust to move text more left */
+
+  /* Background Image */
+  background: url('images/background.jpg') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Dark Overlay */
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Text Content */
+.main div {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animations */
+@keyframes slideFromLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
   }
-  
-  section {
-    padding: 100px 200px;
+  to {
+      transform: translateX(0);
+      opacity: 1;
   }
-  .main {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: url(images/bg.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+}
+
+@keyframes slideFromTop {
+  from {
+      transform: translateY(-100%);
+      opacity: 0;
   }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Applying Animations */
 .main h2 {
-    color: #f0f0f0;
-    font-size: 1.4em;
-    font-weight: 500;
+  font-size: 3.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: slideFromLeft 1.2s ease-out forwards;
 }
 
 .main h2 span {
-  color:rgb(74, 123, 222);
-  font-size: 3em;
-  font-weight: 600;
-}
-.main h3{
-  color: #f0f0f0;
-  font-size: 2em;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-.main-btn{
-  color: #f0f0f0;
-  background-color: rgb(74, 123, 222);
-  text-decoration: none;
-  font-size: 1.1em;
-  font-weight: 600;
-  display: inline-block;
-  padding: 0.9375em 2.1875em;
-  letter-spacing: 1px;
-  border-radius: 15px;
-  margin-bottom: 40px;
-}
-.main-btn:hover{
-  background-color: rgb(17, 70, 174);
-  transform: scale(1.07) ;
-  transition-duration: 300ms;
-}
-.social a{
-  color: #f0f0f0;
-  font-size: 1.7em;
-  padding-right: 30px;
-} 
-.social a:hover{
-  color: #5f6dc3;
- transition-duration: 300ms;
-}
-.title {
-  display: flex;
-  justify-content: center;
-  color:rgb(74, 123, 222);
-  font-size: 2.2em;
-  font-weight: 800;
-  margin-bottom: 30px;
-}
-.content {
-display: flex;
-justify-content: center;
-flex-direction: row;
-flex-wrap: wrap;
+  color: #3a6cf4;
 }
 
-.card {
-  background-color: white;
-  width: 21.25em;
-  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
-  border-radius: 10px;
-  padding: 25px;
-  margin: 15px;
+.main h3 {
+  font-size: 1.8em;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 15px auto 25px;
+  opacity: 0;
+  animation: slideFromTop 1.2s ease-out 0.5s forwards;
 }
+
+.main-btn {
+  color: white;
+  background: #3a6cf4;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 600;
+  display: inline-block;
+  padding: 14px 35px;
+  border-radius: 50px;
+  border: 2px solid #3a6cf4;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  opacity: 0;
+  animation: slideFromBottom 1.2s ease-out 1s forwards;
+}
+
+.main-btn:hover {
+  background: transparent;
+  color: #3a6cf4;
+  transform: translateY(-3px);
+}
+
+/* Social Media */
+.social {
+  margin-top: 30px;
+  opacity: 0;
+  animation: slideFromBottom 1.2s ease-out 1.5s forwards;
+}
+
+.social a {
+  color: white;
+  font-size: 2em;
+  margin: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social a:hover {
+  transform: scale(1.15);
+  color: #3a6cf4;
+}
+/* Services Section */
+.services {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 10%;
+  background: url('images/background.jpg') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Dark Overlay */
+.services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Title Styling */
+.animated-title {
+  margin-bottom: 30px;
+  font-size: 3em;
+  font-weight: 700;
+  color: #003bfe; /* Gold for contrast */
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  position: relative;
+  z-index: 100;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Cards Layout */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Service Card Styling */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  width: 250px; /* Adjust width as needed */
+  height: 300px; /* Set equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content */
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .card:hover {
-transform: scale(1.06);
-transition-duration: 200ms;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
 }
 
 .icon {
-  color:rgb(74, 123, 222);
-  font-size: 8em;
-  text-align: center;
+  font-size: 3em; /* Adjust size as needed */
+  margin-bottom: 15px;
+  display: block; /* Ensures it is properly rendered */
+  color: rgb(74, 123, 222);
 }
-.info {
-text-align: center;
 
-}
+/* Fix text alignment inside cards */
 .info h3 {
-  color:rgb(74, 123, 222);
-  font-size: 1.2em;
-  font-weight: 700;
-  margin: 10px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.info p {
+  font-size: 1em;
+  flex-grow: 1; /* Ensures text is properly aligned */
+}
 
+/* Slide-in Animations */
+@keyframes slideIn {
+  from {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards;
+}
+
+/* Staggered Delay for Animation */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+/* Title Entrance Animation */
+@keyframes fadeInUp {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
 }
