@@ -22,7 +22,7 @@
         
         <div class="contact-cards">
             <!-- WhatsApp Card -->
-            <div class="card whatsapp">
+            <div class="card">
                 <img src="images/whatsapp.png" alt="WhatsApp">
                 <h3 class="social-name">WhatsApp</h3>
                
@@ -38,7 +38,7 @@
             </div>
             
             <!-- Email Card -->
-            <div class="card outlook">
+            <div class="card ">
                 <img src="images/outlook.png" alt="Outlook">
                 <h3 class="social-name">Email</h3>
             
@@ -80,8 +80,17 @@
     color: #3a6cf4;
 }
         .contact {
-            text-align: center;
-            margin-top: 50px;
+            width: 100%;
+  min-height: 100vh; ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 10% 50px;
+  
+  background: url('images/bg.png') no-repeat center center/cover, #1a1a2e;
+  position: relative;
         }
 
         .contact-cards {
@@ -89,6 +98,7 @@
             gap: 30px;
             justify-content: center;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .card {
@@ -214,6 +224,7 @@
                 transform: translateX(0);
             }
         }
+       
     </style>
 
 </body>
