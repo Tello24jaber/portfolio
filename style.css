@@ -59,6 +59,7 @@ header {
 
 /* Responsive Fix for Smaller Screens */
 @media (max-width: 768px) {
+  
   header {
     padding: 10px 20px;
   }
@@ -280,8 +281,8 @@ header {
 }
 
 .info p {
-  font-size: 1em;
-  font-weight: 600;
+  font-size: .85em;
+  font-weight: 500;
   color: #fff;
   flex-grow: 1; /* Ensures text is properly aligned */
 }
