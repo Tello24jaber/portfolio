@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-CODE.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">Talal</a>
+        <nav class="navigation">
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2 class="contact-animated-title">Get in Touch</h2>
+
+        <div class="contact-cards">
+            <!-- WhatsApp Card -->
+            <div class="card">
+                <img src="images/whatsapp.png" alt="WhatsApp">
+                <h3 class="social-name">WhatsApp</h3>
+
+                <div class="buttons">
+                    <button class="action-btn" onclick="window.open('https://wa.me/962790489125', '_blank')">
+                        <i class="fa-brands fa-whatsapp"></i> Send a Message
+                    </button>
+                    <button class="copy-btn" onclick="copyToClipboard('+962790489125', 'whatsapp-msg')">
+                        +962 790489125
+                        <span class="copy-message" id="whatsapp-msg">Copied!</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="card ">
+                <img src="images/outlook.png" alt="Outlook">
+                <h3 class="social-name">Email</h3>
+
+                <div class="buttons">
+                    <button class="action-btn"
+                        onclick="window.open('mailto:t.jaber2@gju.edu.jo?subject=Let\'s Connect&body=Hello Talal,', '_self')">
+                        <i class="fa-solid fa-envelope"></i> Send an Email
+                    </button>
+                    <button class="copy-btn" onclick="copyToClipboard('t.jaber2@gju.edu.jo', 'email-msg')">
+                        T.jaber2@gju.edu.jo
+                        <span class="copy-message" id="email-msg">Copied!</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function copyToClipboard(text, messageId) {
+            navigator.clipboard.writeText(text).then(() => {
+                let msg = document.getElementById(messageId);
+                msg.classList.add("show");
+                setTimeout(() => msg.classList.remove("show"), 2000);
+            });
+        }
+    </script>
+
+    <style>
+        .contact-animated-title {
+            margin-top: 50px;
+            margin-bottom: 10px;
+            font-size: 3em;
+            font-weight: 700;
+            color: #003bfe;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            position: relative;
+            z-index: 100;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        body {
+            background: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        .social-name {
+            color: #3a6cf4;
+        }
+
+        .contact {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 10% 50px;
+            background: url('images/bg.png') no-repeat center center/cover;
+            position: fixed;
+        }
+
+        .contact-cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(63, 7, 7, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+            position: relative;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slide-in-left 0.8s ease-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .card.outlook {
+            transform: translateX(100%);
+            animation: slide-in-right 0.8s ease-out forwards;
+        }
+
+        .card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            color: #ddd;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .action-btn,
+        .copy-btn {
+            border: none;
+            font-size: 1em;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .action-btn {
+            background: #3a6cf4;
+            font-size: .9em;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(58, 108, 244, 0.5);
+        }
+
+        .action-btn:hover {
+            background: #2a5bd7;
+            transform: scale(1.05);
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            position: relative;
+            font-size: 0.9em;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .copy-message {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2a5bd7;
+            color: rgb(6, 6, 6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .copy-message.show {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes slide-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width:799px) {
+            .contact-animated-title {
+                position:relative;
+                margin-top: 80px;
+                font-size: 2.3em;
+                }
+                .contact-cards{
+                    flex-direction: row;
+                }
+                .card{
+                    height: 37vh;
+                    width: 30vh;
+                }
+        }
+    </style>
+
+</body>
+
+</html>

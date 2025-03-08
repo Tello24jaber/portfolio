@@ -1,0 +1,395 @@
+/* General Styles */
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #1a1a2e;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden; /* Prevent scrolling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header Navigation */
+header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background: rgba(26, 26, 46, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  gap: 15px; /* Adds spacing between links */
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+  white-space: nowrap; /* Prevents text from breaking */
+}
+
+.navigation a:hover {
+  background: rgba(58, 108, 244, 0.3);
+  color: #fff;
+}
+
+/* Responsive Fix for Smaller Screens */
+@media (max-width:480px) {
+  header {
+    padding: 7px 15px;
+  }
+
+  .navigation {
+    gap: 7px; /* Reduce spacing */
+  }
+
+  .navigation a {
+    font-size: .8em; /* Reduce font size */
+    padding: 6px 10px; /* Reduce padding */
+  }
+}
+@media (max-width: 768px) {
+  
+  header {
+    padding: 10px 20px;
+  }
+
+  .navigation {
+    gap: 10px; /* Reduce spacing */
+  }
+
+  .navigation a {
+    font-size: 1em; /* Reduce font size */
+    padding: 8px 12px; /* Reduce padding */
+  }
+}
+
+
+.logo {
+  color: #3a6cf4;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+
+/* Fullscreen Background */
+.main {
+  background: url('images/bg.png') no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Moves content to the left */
+  text-align: left;
+  padding-left: 10%; /* Adjust to move text more left */
+
+  /* Background Image */
+  position: relative;
+}
+
+/* Text Content */
+.main div {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animations */
+@keyframes slideFromLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromTop {
+  from {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Applying Animations */
+.main h2 {
+  font-size: 3.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: slideFromLeft 1.2s ease-out forwards;
+}
+
+.main h2 span {
+  color: #3a6cf4;
+}
+
+.main h3 {
+  font-size: 1.8em;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 15px auto 25px;
+  opacity: 0;
+  animation: slideFromTop 1.2s ease-out 0.5s forwards;
+}
+
+.main-btn {
+  color: white;
+  background: #3a6cf4;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 600;
+  display: inline-block;
+  padding: 14px 35px;
+  border-radius: 50px;
+  border: 2px solid #3a6cf4;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  opacity: 0;
+  animation: slideFromBottom 1.2s ease-out 1s forwards;
+}
+
+.main-btn:hover {
+  background: transparent;
+  color: #3a6cf4;
+  transform: translateY(-3px);
+}
+
+/* Social Media */
+.social {
+  margin-top: 30px;
+  opacity: 0;
+  animation: slideFromBottom 1.2s ease-out 1.5s forwards;
+}
+
+.social a {
+  color: white;
+  font-size: 2em;
+  margin: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social a:hover {
+  transform: scale(1.15);
+  color: #3a6cf4;
+}
+
+/* Services Section */
+.services {
+  width: 100%;
+  min-height: 100vh; ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 10%;
+  background: url('images/bg.png') no-repeat center center/cover fixed;
+  position: relative;
+}
+
+
+/* Title Styling */
+.animated-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 3em;
+  font-weight: 700;
+  color: #003bfe; /* Gold for contrast */
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  position: relative;
+  z-index: 100;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Cards Layout */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Service Card Styling */
+.card {
+  background-color: rgba(10, 30, 117, 0.133) !important; /* Ensure card background color is applied */
+  border-radius: 12px;
+  padding: 30px;
+  width: 250px; /* Adjust width as needed */
+  height: 300px; /* Set equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content */
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Icon Styling */
+.icon {
+  font-size: 5em; /* Adjust size as needed */
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: block;
+  color: rgb(14, 58, 146); /* Adjust color */
+}
+
+/* Fix text alignment inside cards */
+.info h3 {
+  font-size: 1.5em;
+  color: #25D366;
+  margin-bottom: 10px;
+}
+
+.info p {
+  font-size: .85em;
+  font-weight: 500;
+  color: #fff;
+  flex-grow: 1; /* Ensures text is properly aligned */
+}
+
+/* Slide-in Animations */
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards;
+}
+
+/* Staggered Delay for Animation */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+/* Title Entrance Animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.projects {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 10%;
+  background: url('images/bg.png') no-repeat center center/cover;
+  position: relative;
+}
+
+
+.projects-content {
+  font-size: 2em;
+  font-weight: bold;
+  display: flex; 
+  gap: 5px; /* Add spacing between letters */
+  color: #15caaf;
+  overflow: hidden;
+}
+
+/* Hide all characters initially */
+.projects-content span {
+  opacity: 0;
+  transform: translateY(30px);
+  display: inline-block;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Apply a delay to each character */
+.projects-content span:nth-child(1) { animation-delay: 0.1s; }
+.projects-content span:nth-child(2) { animation-delay: 0.2s; }
+.projects-content span:nth-child(3) { animation-delay: 0.3s; }
+.projects-content span:nth-child(4) { animation-delay: 0.4s; }
+.projects-content span:nth-child(5) { animation-delay: 0.5s; }
+.projects-content span:nth-child(6) { animation-delay: 0.6s; }
+.projects-content span:nth-child(7) { animation-delay: 0.7s; }
+.projects-content span:nth-child(8) { animation-delay: 0.8s; }
+.projects-content span:nth-child(9) { animation-delay: 0.9s; }
+.projects-content span:nth-child(10) { animation-delay: 1s; }
+.projects-content span:nth-child(11) { animation-delay: 1.1s; }
+.projects-content span:nth-child(12) { animation-delay: 1.2s; }
+.projects-content span:nth-child(13) { animation-delay: 1.3s; }
+.projects-content span:nth-child(14) { animation-delay: 1.4s; }
+/* Animation for each character */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
