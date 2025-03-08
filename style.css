@@ -37,7 +37,7 @@ header {
 
 .navigation {
   display: flex;
-  flex-wrap: wrap; /* Prevents wrapping */
+  flex-wrap: wrap;
   gap: 15px; /* Adds spacing between links */
 }
 
@@ -275,7 +275,7 @@ header {
 .content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 20px;
   position: relative;
@@ -284,12 +284,13 @@ header {
 
 /* Service Card Styling */
 .card {
-  background-color: rgba(10, 30, 117, 0.133) !important; /* Ensure card background color is applied */
+  border-color: brown;
+  background-color: rgba(10, 30, 117, 0.133);
   border-radius: 12px;
-  padding: 30px;
+  padding: 30px; /* Ensure consistent padding */
   width: 100%; 
+  height: 300px;
   max-width: 250px; 
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center content */

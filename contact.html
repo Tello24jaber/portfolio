@@ -70,7 +70,7 @@
 
     <style>
         .contact-animated-title {
-            margin-top: 50px;
+            margin-top: 120px;
             margin-bottom: 10px;
             font-size: 3em;
             font-weight: 700;
@@ -109,23 +109,25 @@
             padding: 50px 10% 50px;
             background: url('images/bg.png') no-repeat center center/cover;
             position: fixed;
+            overflow-y: scroll;
         }
 
         .contact-cards {
             display: flex;
             gap: 20px;
             justify-content: center;
+            flex-direction: row;
             margin-top: 10px;
             flex-wrap: wrap;
-            flex-direction: row;
+            
         }
 
         .c-card {
+            flex-direction: column;
             background: rgba(63, 7, 7, 0.1);
-            padding: 25px;
+            padding: 35px 40px;
             border-radius: 20px;
             width: 100%;
-            
             max-width: 300px;
             text-align: center;
             backdrop-filter: blur(15px);
@@ -247,27 +249,33 @@
         
 
         @media (max-width: 799px) {
+            .c-card{
+                padding: 25px 50px;
+            }
     .contact-animated-title {
-        margin-top: 80px;
+        margin-top: 60px;
         font-size: 2em;
     }
     .contact-cards {
         flex-direction: column; /* Stack cards vertically */
         align-items: center; /* Center cards */
     }
-    .card {
-        width: 80%; /* Use a percentage for width */
-        height: auto; /* Allow height to adjust automatically */
-        margin-bottom: 20px; /* Add some space between cards */
+    .c-card {
+   
+    margin-bottom: 20px; 
     }
 }
 
 @media (max-width: 500px) {
-    .contact-animated-title {
-        font-size: 1.5em; /* Smaller font size for very small screens */
+    
+    .c-card {
+        align-items: center;
+
+       
     }
-    .card {
-        width: 90%; /* Make cards wider on very small screens */
+    .contact-cards {
+        flex-direction: row; /* Stack cards vertically */
+        align-items: center; /* Center cards */
     }
 }
         
