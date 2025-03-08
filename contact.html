@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-CODE.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <a href="index.html" class="logo">Talal</a>
@@ -16,16 +18,16 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-    
+
     <section class="contact">
-        <h2 class="animated-title">Get in Touch</h2>
-        
+        <h2 class="contact-animated-title">Get in Touch</h2>
+
         <div class="contact-cards">
             <!-- WhatsApp Card -->
-            <div class="card">
+            <div class="c-card">
                 <img src="images/whatsapp.png" alt="WhatsApp">
                 <h3 class="social-name">WhatsApp</h3>
-               
+
                 <div class="buttons">
                     <button class="action-btn" onclick="window.open('https://wa.me/962790489125', '_blank')">
                         <i class="fa-brands fa-whatsapp"></i> Send a Message
@@ -36,14 +38,15 @@
                     </button>
                 </div>
             </div>
-            
+
             <!-- Email Card -->
-            <div class="card ">
+            <div class="c-card ">
                 <img src="images/outlook.png" alt="Outlook">
                 <h3 class="social-name">Email</h3>
-            
+
                 <div class="buttons">
-                    <button class="action-btn" onclick="window.open('mailto:t.jaber2@gju.edu.jo?subject=Let\'s Connect&body=Hello Talal,', '_self')">
+                    <button class="action-btn"
+                        onclick="window.open('mailto:t.jaber2@gju.edu.jo?subject=Let\'s Connect&body=Hello Talal,', '_self')">
                         <i class="fa-solid fa-envelope"></i> Send an Email
                     </button>
                     <button class="copy-btn" onclick="copyToClipboard('t.jaber2@gju.edu.jo', 'email-msg')">
@@ -66,6 +69,20 @@
     </script>
 
     <style>
+        .contact-animated-title {
+            margin-top: 50px;
+            margin-bottom: 10px;
+            font-size: 3em;
+            font-weight: 700;
+            color: #003bfe;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            position: relative;
+            z-index: 100;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
         body {
             background: #121212;
             color: white;
@@ -76,36 +93,40 @@
             font-family: 'Poppins', sans-serif;
             overflow: hidden;
         }
-.social-name{
-    color: #3a6cf4;
-}
+
+        .social-name {
+            color: #3a6cf4;
+        }
+
         .contact {
             width: 100%;
-  min-height: 100vh; ;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 50px 10% 50px;
-  
-  background: url('images/bg.png') no-repeat center center/cover, #1a1a2e;
-  position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 10% 50px;
+            background: url('images/bg.png') no-repeat center center/cover;
+            position: fixed;
         }
 
         .contact-cards {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 10px;
             flex-wrap: wrap;
+            flex-direction: row;
         }
 
-        .card {
+        .c-card {
             background: rgba(63, 7, 7, 0.1);
             padding: 25px;
             border-radius: 20px;
-            width: 300px;
+            width: 100%;
+            
+            max-width: 300px;
             text-align: center;
             backdrop-filter: blur(15px);
             box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
@@ -116,28 +137,23 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card:hover {
+        .c-card:hover {
             transform: translateY(-5px);
             box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
         }
 
-        .card.outlook {
+        .c-card.outlook {
             transform: translateX(100%);
             animation: slide-in-right 0.8s ease-out forwards;
         }
 
-        .card img {
+        .c-card img {
             width: 60px;
             height: 60px;
             margin-bottom: 15px;
         }
 
-        .card p {
-            font-size: 0.95em;
-            color: #ddd;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
+       
 
         .buttons {
             display: flex;
@@ -146,7 +162,8 @@
             margin-top: 15px;
         }
 
-        .action-btn, .copy-btn {
+        .action-btn,
+        .copy-btn {
             border: none;
             font-size: 1em;
             padding: 12px;
@@ -163,6 +180,7 @@
 
         .action-btn {
             background: #3a6cf4;
+            font-size: .9em;
             color: white;
             box-shadow: 0px 4px 10px rgba(58, 108, 244, 0.5);
         }
@@ -208,6 +226,7 @@
                 opacity: 0;
                 transform: translateX(-100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -219,13 +238,41 @@
                 opacity: 0;
                 transform: translateX(100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-       
+        
+
+        @media (max-width: 799px) {
+    .contact-animated-title {
+        margin-top: 80px;
+        font-size: 2em;
+    }
+    .contact-cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards */
+    }
+    .card {
+        width: 80%; /* Use a percentage for width */
+        height: auto; /* Allow height to adjust automatically */
+        margin-bottom: 20px; /* Add some space between cards */
+    }
+}
+
+@media (max-width: 500px) {
+    .contact-animated-title {
+        font-size: 1.5em; /* Smaller font size for very small screens */
+    }
+    .card {
+        width: 90%; /* Make cards wider on very small screens */
+    }
+}
+        
     </style>
 
 </body>
+
 </html>

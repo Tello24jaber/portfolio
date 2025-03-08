@@ -11,7 +11,6 @@ body {
   background: #1a1a2e;
   color: white;
   min-height: 100vh;
-  overflow: hidden; /* Prevent scrolling */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,15 +37,15 @@ header {
 
 .navigation {
   display: flex;
-  flex-wrap: nowrap; /* Prevents wrapping */
+  flex-wrap: wrap; /* Prevents wrapping */
   gap: 15px; /* Adds spacing between links */
 }
 
 .navigation a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.2em;
-  padding: 10px 15px;
+  font-size: 1em;
+  padding: 5px 9px;
   border-radius: 10px;
   transition: background 0.3s ease, color 0.3s ease;
   white-space: nowrap; /* Prevents text from breaking */
@@ -54,25 +53,66 @@ header {
 
 .navigation a:hover {
   background: rgba(58, 108, 244, 0.3);
+  
   color: #fff;
 }
+@media (max-width: 1024px) {
+  .main h2 {
+    font-size: 2.5em; /* Adjust font size for tablets */
+  }
 
-/* Responsive Fix for Smaller Screens */
+  .card {
+    width: 80%; /* Make cards wider on tablets */
+  }
+}
+
 @media (max-width: 768px) {
-  
+  .animated-title{
+    font-size: 2em;
+  }
   header {
-    padding: 10px 20px;
+    padding: 8px 18px;
   }
 
   .navigation {
-    gap: 10px; /* Reduce spacing */
+    gap: 7px; /* Reduce spacing */
   }
 
   .navigation a {
     font-size: 1em; /* Reduce font size */
     padding: 8px 12px; /* Reduce padding */
   }
+  .main h2 {
+    font-size: 2em; /* Further reduce font size for smaller screens */
+  }
+
+  .card {
+    width: 90%; /* Make cards even wider on smaller screens */
+  }
 }
+
+@media (max-width: 480px) {
+  header {
+    padding: 7px 15px;
+  }
+
+  .navigation {
+    gap: 5px; /* Reduce spacing */
+  }
+
+  .navigation a {
+    font-size: .6em; /* Reduce font size */
+    padding: 4px 8px; /* Reduce padding */
+  }
+  .main h2 {
+    font-size: 1.5em; /* Smaller font size for very small screens */
+  }
+
+  .card {
+    width: 100%; /* Full width on very small screens */
+  }
+}
+
 
 
 .logo {
@@ -95,7 +135,6 @@ header {
   text-align: left;
   padding-left: 10%; /* Adjust to move text more left */
 
-  /* Background Image */
   position: relative;
 }
 
@@ -212,7 +251,7 @@ header {
   align-items: center;
   text-align: center;
   padding: 50px 10%;
-  background: url('images/bg.png') no-repeat center center/cover;
+  background: url('images/bg.png') no-repeat center center/cover fixed;
   position: relative;
 }
 
@@ -248,8 +287,9 @@ header {
   background-color: rgba(10, 30, 117, 0.133) !important; /* Ensure card background color is applied */
   border-radius: 12px;
   padding: 30px;
-  width: 250px; /* Adjust width as needed */
-  height: 300px; /* Set equal height */
+  width: 100%; 
+  max-width: 250px; 
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center content */
