@@ -69,37 +69,15 @@ const About = () => {
             </Link>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-            {/* Profile Image */}
-            <motion.div variants={riseIn} className="lg:col-span-1">
-              <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-[var(--primary)]/20 to-[var(--accent)]/20 border border-white/10">
-                  <img
-                    src="/images/avatar.jpg"
-                    alt={siteConfig.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                
-                {/* Status Badge */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                  <div className="flex items-center gap-2 px-4 py-2 bg-[var(--surface)] border border-white/10 rounded-full backdrop-blur-sm">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-[var(--text)]">Available for work</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
+          <div className="max-w-4xl mx-auto text-center">
             {/* Bio Content */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="space-y-6">
               <motion.div variants={riseIn}>
                 <h1 className="text-4xl lg:text-5xl font-bold text-[var(--text)] mb-4">
                   About {siteConfig.name}
                 </h1>
                 
-                <div className="flex items-center gap-4 mb-6 text-[var(--muted)]">
+                <div className="flex items-center justify-center gap-6 mb-6 text-[var(--muted)]">
                   <div className="flex items-center gap-2">
                     <MapPin size={18} />
                     <span>{siteConfig.location}</span>
@@ -108,6 +86,12 @@ const About = () => {
                   <div className="flex items-center gap-2">
                     <Award size={18} />
                     <span>Falling Walls Winner 2025</span>
+                  </div>
+                  
+                  {/* Status Badge */}
+                  <div className="flex items-center gap-2 px-4 py-2 bg-[var(--surface)] border border-white/10 rounded-full backdrop-blur-sm">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-[var(--text)]">Available for work</span>
                   </div>
                 </div>
               </motion.div>
@@ -132,7 +116,7 @@ const About = () => {
               </motion.div>
 
               {/* Contact Info & Actions */}
-              <motion.div variants={riseIn} className="flex flex-wrap gap-4 pt-4">
+              <motion.div variants={riseIn} className="flex flex-wrap justify-center gap-4 pt-4">
                 <a
                   href={cvFile}
                   download
