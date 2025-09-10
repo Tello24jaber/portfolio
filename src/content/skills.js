@@ -34,7 +34,7 @@ export const skills = [
   },
   {
     name: 'Next.js',
-    level: 4,
+    level: 2,
     category: 'Frontend',
     keywords: ['ssr', 'routing', 'optimization'],
     icon: 'Boxes',
@@ -84,7 +84,7 @@ export const skills = [
   },
   {
     name: 'Spring Boot',
-    level: 3,
+    level: 1,
     category: 'Backend',
     keywords: ['framework', 'microservices', 'java'],
     icon: 'Leaf',
@@ -102,7 +102,7 @@ export const skills = [
   },
   {
     name: 'PostgreSQL',
-    level: 4,
+    level: 2,
     category: 'Database',
     keywords: ['relational', 'sql', 'advanced'],
     icon: 'Cylinder',
@@ -110,7 +110,7 @@ export const skills = [
   },
   {
     name: 'SQL',
-    level: 4,
+    level: 2,
     category: 'Database',
     keywords: ['queries', 'joins', 'optimization'],
     icon: 'Table2',
@@ -162,7 +162,7 @@ export const skills = [
   },
   {
     name: 'Google Apps Script',
-    level: 3,
+    level: 4,
     category: 'APIs',
     keywords: ['automation', 'google', 'scripting'],
     icon: 'Code',
@@ -172,7 +172,7 @@ export const skills = [
   // Emerging Technologies
   {
     name: 'AI Integration',
-    level: 3,
+    level: 2,
     category: 'AI/ML',
     keywords: ['chatgpt', 'automation', 'smart'],
     icon: 'Bot',

@@ -12,7 +12,7 @@ const ProjectCard = ({ project, featured = false, index = 0 }) => {
     shortDescription,
     technologies,
     images,
-    links,
+    link, // Fixed: destructure direct link property
     year,
     status,
     impact
@@ -56,14 +56,14 @@ const ProjectCard = ({ project, featured = false, index = 0 }) => {
               </Link>
             </motion.div>
 
-            {links.live && (
+            {link && (
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 whileHover={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.1 }}
               >
                 <a
-                  href={links.live}
+                  href={`https://${link}`} // Fixed: add https protocol
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors focus-ring"
@@ -74,23 +74,7 @@ const ProjectCard = ({ project, featured = false, index = 0 }) => {
               </motion.div>
             )}
 
-            {links.repo && (
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileHover={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.2 }}
-              >
-                <a
-                  href={links.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors focus-ring"
-                  aria-label="View source code"
-                >
-                  <Github size={20} />
-                </a>
-              </motion.div>
-            )}
+            {/* Removed GitHub repo link since it doesn't exist in the data */}
           </div>
 
           {/* Status Badge */}
@@ -183,9 +167,9 @@ const ProjectCard = ({ project, featured = false, index = 0 }) => {
 
             {/* Quick Actions */}
             <div className="flex gap-1">
-              {links.live && (
+              {link && (
                 <a
-                  href={links.live}
+                  href={`https://${link}`} // Fixed: add https protocol
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg text-[var(--muted)] hover:text-[var(--primary)] hover:bg-white/5 transition-colors focus-ring"
@@ -194,8 +178,6 @@ const ProjectCard = ({ project, featured = false, index = 0 }) => {
                   <ExternalLink size={16} />
                 </a>
               )}
-              
-             
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ import { siteConfig } from '../content/site'
 import { skills, getSkillsByCategory, getSkillCategories } from '../content/skills'
 import { achievements } from '../content/achievements'
 import { riseIn, staggerWrap } from '../lib/motion'
-
+import cvFile from '../assets/talal.pdf'
 const About = () => {
   const skillCategories = getSkillCategories()
 
@@ -134,7 +134,7 @@ const About = () => {
               {/* Contact Info & Actions */}
               <motion.div variants={riseIn} className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="#"
+                  href={cvFile}
                   download
                   className="btn-primary"
                 >
@@ -293,7 +293,7 @@ const About = () => {
           <motion.div variants={riseIn} className="card p-8 max-w-3xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-[var(--primary)] mb-2">One</div>
+                <div className="text-3xl font-bold text-[var(--primary)] mb-2">1+</div>
                 <div className="text-[var(--muted)]">Year of Experience</div>
               </div>
               

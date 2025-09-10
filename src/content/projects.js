@@ -26,8 +26,8 @@ Built with enterprise-grade scalability in mind, DineLink can handle multiple re
     technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'SQL', 'Next.js', 'Tailwind', 'Python', 'Cloudflare', 'Digital Ocean'],
     category: 'Startup',
     status: 'Active',
-    year: 'Feb 2025 - Present',
-    duration: 'Feb 2025 - Present',
+    year: '2025 ',
+    duration: 'Ongoing',
     
     impact: {
       recognition: 'Winner of Falling Walls Lab Jordan 2025',
@@ -38,11 +38,7 @@ Built with enterprise-grade scalability in mind, DineLink can handle multiple re
     
     vision: 'Transform blind, outdated restaurant operations into intelligent, data-driven hospitality experiences that delight customers and empower staff.',
     
-    links: {
-      demo: 'dinelink.org',
-      live: 'dinelink.org'
-    },
-    
+    link: 'dinelink.org',
     images: {
       cover: '/images/projects/dinelink-cover.jpg',
       gallery: [
@@ -99,7 +95,7 @@ The backend API ensures secure data handling, user authentication, order process
     category: 'E-Commerce',
     status: 'Deployed',
     year: 'Aug 2025',
-    duration: 'Aug 2025',
+    duration: '4 weeks',
     
     deployment: {
       frontend: 'Modern hosting platform',
@@ -108,9 +104,7 @@ The backend API ensures secure data handling, user authentication, order process
       development: 'Vite build system'
     },
     
-    links: {
-      live: 'wearonesalt.com',
-    },
+    link: 'wearonesalt.com',
     
     images: {
       cover: '/images/projects/onesalt-cover.jpg',
@@ -167,8 +161,8 @@ Integration with Google Sheets API creates a powerful yet simple backend system 
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Google Sheets API'],
     category: 'Restaurant Tech',
     status: 'Deployed',
-    year: 'Apr 2025',
-    duration: 'Apr 2025',
+    year: ' 2025',
+    duration: '2 weeks',
     
     innovation: {
       approach: 'Using Google Sheets as a database alternative',
@@ -176,10 +170,8 @@ Integration with Google Sheets API creates a powerful yet simple backend system 
       scalability: 'Easy data management and reporting through Sheets interface'
     },
     
-    links: {
-      live: 'justcook1.netlify.app',
+    link:'justcook1.netlify.app',
     
-    },
     
     images: {
       cover: '/images/projects/justcook-cover.jpg',

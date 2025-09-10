@@ -6,7 +6,7 @@ export const siteConfig = {
   fullBio: 'I\'m a passionate entrepreneur and full-stack developer. I founded DineLink, an AI-powered restaurant management startup that won Falling Walls Lab Jordan 2025. Currently representing Jordan at the Global Finale in Berlin. I specialize in creating innovative technology solutions that solve real business problems.',
   
   contact: {
-    email: 't.jaber2@gju.edu.jo',
+    email: 'talalhjaber@gmail.com',
     phone: '+962790489125',
     whatsapp: '962790489125'
   },
@@ -14,7 +14,7 @@ export const siteConfig = {
   socials: {
     github: 'https://github.com/Tello24jaber',
     linkedin: 'https://www.linkedin.com/in/talal-jaber-02132b2b9',
-    email: 'mailto:t.jaber2@gju.edu.jo',
+    email: 'mailto:talalhjaber@gmail.com',
     whatsapp: 'https://wa.me/962790489125'
   },
   

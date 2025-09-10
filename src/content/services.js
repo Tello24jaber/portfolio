@@ -29,8 +29,8 @@ export const services = [
       'Post-launch support and maintenance'
     ],
     
-    timeline: '2-8 weeks depending on complexity',
-    startingPrice: 'From 400 JD',
+    timeline: '3-8 weeks depending on complexity',
+    startingPrice: 'From 300 JD',
     
     processSteps: [
       'Discovery and requirements gathering',
@@ -82,8 +82,8 @@ export const services = [
       'Training materials and documentation'
     ],
     
-    timeline: '6-12 weeks for complete solution',
-    startingPrice: 'From 300 JD',
+    timeline: '3-6 weeks for complete solution',
+    startingPrice: 'From 250 JD',
     
     processSteps: [
       'Business requirements and feature planning',
@@ -137,8 +137,8 @@ export const services = [
       'Training and implementation support'
     ],
     
-    timeline: '8-16 weeks for complete system',
-    startingPrice: 'From 800 JD',
+    timeline: '8-14 weeks for complete system',
+    startingPrice: 'From 400 JD',
     
     processSteps: [
       'Restaurant operations analysis',
@@ -194,7 +194,7 @@ export const services = [
     ],
     
     timeline: '4-10 weeks depending on complexity',
-    startingPrice: 'From 500 JD',
+    startingPrice: 'From 350 JD',
     
     processSteps: [
       'Requirements gathering and API planning',
@@ -247,8 +247,8 @@ export const services = [
       'Team training on workflows'
     ],
     
-    timeline: '2-6 weeks for complete setup',
-    startingPrice: 'From 200 JD',
+    timeline: '2-4 weeks for complete setup',
+    startingPrice: 'From 150 JD',
     
     processSteps: [
       'Current infrastructure assessment',
@@ -301,7 +301,7 @@ export const services = [
       'Future roadmap and recommendations'
     ],
     
-    timeline: '1-8 weeks depending on scope',
+    timeline: '3-8 weeks depending on scope',
     startingPrice: 'From 200 JD',
     
     processSteps: [

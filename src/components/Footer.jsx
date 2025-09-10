@@ -205,8 +205,8 @@ const Footer = () => {
             className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10"
           >
             <div className="flex items-center gap-2 text-sm text-[var(--muted)] mb-4 md:mb-0">
-              <span>© {new Date().getFullYear()} {name}. Made with</span>
-              <Heart size={16} className="text-red-400" />
+              <span>© {new Date().getFullYear()} {name}</span>
+              
              
             </div>
 

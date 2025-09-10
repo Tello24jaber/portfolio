@@ -32,7 +32,7 @@ export const achievements = [
     date: '2025',
     description: 'Selected for the prestigious mentorship program focusing on entrepreneurship and technology innovation.',
     details: 'Worked closely with industry mentors to develop DineLink and gain insights into startup ecosystem and business development.',
-    link: null,
+    link: 'https://www.gju.edu.jo/content/incubation-and-entrepreneurship-services-14004',
     icon: 'GraduationCap',
     image: '/images/achievements/gju-mentorship.jpg',
     type: 'program',

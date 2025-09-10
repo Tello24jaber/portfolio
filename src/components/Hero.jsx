@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { staggerWrap, riseIn, fadeIn, hoverLift, press } from '../lib/motion'
 import { siteConfig } from '../content/site'
 import { cn } from '../lib/utils'
-
+import cvFile from '../assets/talal.pdf'
 const Hero = () => {
   const { name, title, location, shortBio, socials } = siteConfig
 
@@ -75,7 +75,7 @@ const Hero = () => {
             
             <motion.div {...hoverLift} {...press}>
               <a
-                href="#" // Add your CV/resume link here
+                href={cvFile}
                 className="btn-secondary group"
                 download
               >

@@ -39,7 +39,7 @@ const ProjectDetail = () => {
     features,
     technologies,
     images,
-    links,
+    link, // Fixed: use direct link property
     year,
     status,
     impact,
@@ -137,9 +137,9 @@ const ProjectDetail = () => {
 
               {/* Quick Actions */}
               <div className="flex flex-wrap gap-4">
-                {links.live && (
+                {link && (
                   <a
-                    href={links.live}
+                    href={`https://${link}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary"
@@ -148,9 +148,6 @@ const ProjectDetail = () => {
                     View Live Site
                   </a>
                 )}
-              
-                
-              
               </div>
             </motion.div>
 
@@ -430,7 +427,7 @@ const ProjectDetail = () => {
               </button>
 
               {/* Navigation Buttons */}
-              {images.gallery.length > 1 && (
+              {images.gallery && images.gallery.length > 1 && (
                 <>
                   <button
                     onClick={prevImage}
@@ -452,13 +449,13 @@ const ProjectDetail = () => {
 
               {/* Image */}
               <img
-                src={images.gallery[currentImageIndex]}
+                src={images.gallery && images.gallery[currentImageIndex]}
                 alt={`${title} screenshot ${currentImageIndex + 1}`}
                 className="max-w-full max-h-full object-contain rounded-lg"
               />
 
               {/* Image Counter */}
-              {images.gallery.length > 1 && (
+              {images.gallery && images.gallery.length > 1 && (
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-black/50 text-white text-sm rounded-full">
                   {currentImageIndex + 1} / {images.gallery.length}
                 </div>
