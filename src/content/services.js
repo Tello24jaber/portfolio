@@ -30,7 +30,7 @@ export const services = [
     ],
     
     timeline: '3-8 weeks depending on complexity',
-    startingPrice: 'From 300 JD',
+    startingPrice: 'From 600 JD',
     
     processSteps: [
       'Discovery and requirements gathering',
@@ -83,7 +83,7 @@ export const services = [
     ],
     
     timeline: '3-6 weeks for complete solution',
-    startingPrice: 'From 250 JD',
+    startingPrice: 'From 550 JD',
     
     processSteps: [
       'Business requirements and feature planning',
@@ -138,7 +138,7 @@ export const services = [
     ],
     
     timeline: '8-14 weeks for complete system',
-    startingPrice: 'From 400 JD',
+    startingPrice: 'From 900 JD',
     
     processSteps: [
       'Restaurant operations analysis',
@@ -194,7 +194,7 @@ export const services = [
     ],
     
     timeline: '4-10 weeks depending on complexity',
-    startingPrice: 'From 350 JD',
+    startingPrice: 'From 700 JD',
     
     processSteps: [
       'Requirements gathering and API planning',
@@ -248,7 +248,7 @@ export const services = [
     ],
     
     timeline: '2-4 weeks for complete setup',
-    startingPrice: 'From 150 JD',
+    startingPrice: 'From 350 JD',
     
     processSteps: [
       'Current infrastructure assessment',
@@ -302,7 +302,7 @@ export const services = [
     ],
     
     timeline: '3-8 weeks depending on scope',
-    startingPrice: 'From 200 JD',
+    startingPrice: 'From 450 JD',
     
     processSteps: [
       'Current process assessment',

@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: 'Talal Jaber',
-  title: 'Founder & Full-Stack Developer',
+  title: 'Software Engineer & Full-Stack Developer',
   location: 'Jordan',
-  shortBio: 'Founder of DineLink, Winner of Falling Walls Lab Jordan 2025. Building intelligent restaurant tech and modern web solutions.',
-  fullBio: 'I\'m a passionate entrepreneur and full-stack developer. I founded DineLink, an AI-powered restaurant management startup that won Falling Walls Lab Jordan 2025. Currently representing Jordan at the Global Finale in Berlin. I specialize in creating innovative technology solutions that solve real business problems.',
+  shortBio: 'Software Engineer & CS student at GJU. Founder & CTO of DineLink. Top 100 global innovator at Falling Walls Foundation (Berlin) from 2,700+ applicants worldwide.',
+  fullBio: 'Software Engineer and Computer Engineering student at the German Jordanian University, specializing in end-to-end web applications. Founder & CTO of DineLink, an AI-powered restaurant management startup. Selected among the Top 100 global innovators at the Falling Walls Foundation (Berlin) from 2,700+ applicants. Front-End Lead at H20 Digital Solutions, Technical Director at GDG Amman, and Falling Walls Foundation Ambassador for Jordan.',
   
   contact: {
     email: 'talalhjaber@gmail.com',
@@ -19,16 +19,16 @@ export const siteConfig = {
   },
   
   stats: [
-    { label: 'Startup Founded', value: 1, suffix: '' },
-    { label: 'Projects Completed', value: 3, suffix: '+' },
-    { label: 'Technologies Used', value: 12, suffix: '+' },
-    { label: 'Awards Won', value: 1, suffix: '' }
+    { label: 'Freelance Projects', value: 9, suffix: '+' },
+    { label: 'Global Innovators Rank', value: 100, suffix: 'top' },
+    { label: 'Technologies Used', value: 15, suffix: '+' },
+    { label: 'Awards & Competitions', value: 5, suffix: '+' }
   ],
   
   seo: {
-    title: 'Talal Jaber - Founder & Developer | DineLink | Restaurant Tech',
-    description: 'Founder of DineLink, AI-powered restaurant management platform. Winner of Falling Walls Lab Jordan 2025, representing Jordan in Berlin.',
-    keywords: 'founder, startup, DineLink, restaurant tech, AI, full-stack developer, Talal Jaber, Falling Walls',
+    title: 'Talal Jaber – Software Engineer & Founder | Portfolio',
+    description: 'Software Engineer, Founder & CTO of DineLink, Top 100 global innovator at Falling Walls Foundation Berlin. Full-stack developer based in Amman, Jordan.',
+    keywords: 'Talal Jaber, software engineer, full-stack developer, DineLink, Falling Walls, React, Next.js, Jordan',
     url: 'https://talaljaber.com',
     image: '/og-image.png'
   }

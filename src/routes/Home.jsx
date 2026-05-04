@@ -1,241 +1,192 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Star } from 'lucide-react'
-
-import Section from '../components/Section'
-import Hero from '../components/Hero'
-import Stat from '../components/Stat'
-import SkillsCloud from '../components/SkillsCloud'
-import Timeline from '../components/Timeline'
-import ProjectCard from '../components/ProjectCard'
-import ServiceCard from '../components/ServiceCard'
-
+import { Download, MapPin, Mail, Github, Linkedin } from 'lucide-react'
+import { riseIn, staggerWrap } from '../lib/motion'
 import { siteConfig } from '../content/site'
-import { skills, getTopSkills } from '../content/skills'
-import { achievements } from '../content/achievements'
-import { projects, getFeaturedProjects } from '../content/projects'
-import { services, getFeaturedServices } from '../content/services'
-import { riseIn, staggerWrap, press } from '../lib/motion'
+import cvFile from '../assets/talal.pdf'
+
+const skills = [
+  { label: 'Frontend', items: ['React.js', 'Next.js', 'Tailwind CSS', 'Vue.js', 'TypeScript'] },
+  { label: 'Backend', items: ['Node.js', 'NestJS', 'FastAPI', 'Express.js'] },
+  { label: 'Database', items: ['PostgreSQL', 'MySQL', 'Supabase'] },
+  { label: 'AI / ML', items: ['Python', 'SVM', 'MediaPipe', 'Signal Processing', 'LLMs'] },
+  { label: 'DevOps', items: ['Docker', 'GitHub Actions', 'AWS', 'Netlify', 'Linux'] },
+  { label: 'Languages', items: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'] },
+]
+
+const experience = [
+  { role: 'Front-End Lead', org: 'H20 Digital Solutions', period: 'Nov 2025 – Present' },
+  { role: 'Founder & CTO', org: 'DineLink (Startup)', period: 'Feb 2025 – Present' },
+  { role: 'Ambassador – Jordan', org: 'Falling Walls Foundation', period: 'Apr 2026 – Present' },
+  { role: 'Technical Director', org: 'GDG Amman', period: 'Aug 2025 – Present' },
+  { role: 'Freelance Full-Stack Developer', org: 'Self-employed', period: 'Feb 2025 – Present' },
+]
+
+const highlights = [
+  { value: 'Top 100', label: 'Global Innovator', sub: 'Falling Walls, Berlin · 2,700+ applicants' },
+  { value: '1st', label: 'Falling Walls Jordan', sub: 'Among 50+ national innovators' },
+  { value: '9+', label: 'Freelance Projects', sub: 'Delivered within 4-week deadlines' },
+]
 
 const Home = () => {
-  const featuredProjects = getFeaturedProjects().slice(0, 3)
-  const featuredServices = getFeaturedServices().slice(0, 3)
-  const topSkills = getTopSkills(12)
-  const featuredAchievements = achievements.filter(a => a.featured)
-
   return (
-    <main className="overflow-x-hidden">
-      {/* Hero Section */}
-      <Hero />
+    <main id="main-content" className="min-h-screen pt-20 pb-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <motion.div variants={staggerWrap} initial="hidden" animate="show">
 
-      {/* Stats Section */}
-      <Section padding="small" background="muted">
-        <motion.div
-          variants={staggerWrap}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
-        >
-          {siteConfig.stats.map((stat, index) => (
-            <Stat
-              key={stat.label}
-              value={stat.value}
-              suffix={stat.suffix}
-              label={stat.label}
-              delay={index * 0.1}
-            />
-          ))}
-        </motion.div>
-      </Section>
+          {/* ── Desktop: two-column grid ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 pt-10 lg:pt-16">
 
-      {/* Skills Section */}
-      <Section id="skills">
-        <motion.div
-          variants={staggerWrap}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <motion.div variants={riseIn} className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[var(--text)] mb-4">
-              Technologies & Skills
-            </h2>
-            <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-              I work with modern technologies to build scalable, efficient, and user-friendly applications
-            </p>
-          </motion.div>
+            {/* ── LEFT COLUMN ── */}
+            <div className="space-y-12">
 
-          <SkillsCloud skills={topSkills} layout="grid" />
+              {/* Hero */}
+              <motion.div variants={riseIn}>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-sm text-[var(--muted)]">Available for work</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text)] mb-3 leading-tight">
+                  Talal Jaber
+                </h1>
+                <p className="text-xl lg:text-2xl text-[var(--primary)] font-medium mb-4">
+                  Software Engineer & Full-Stack Developer
+                </p>
+                <div className="flex items-center gap-2 text-[var(--muted)] text-sm mb-5">
+                  <MapPin size={14} />
+                  <span>Amman, Jordan · German Jordanian University</span>
+                </div>
+                <p className="text-[var(--muted)] leading-relaxed text-base lg:text-lg max-w-2xl">
+                  {siteConfig.fullBio}
+                </p>
+                <div className="flex flex-wrap gap-3 mt-6">
+                  <a href={cvFile} download className="btn-primary">
+                    <Download size={16} /> Download CV
+                  </a>
+                  <Link to="/contact" className="btn-secondary">
+                    <Mail size={16} /> Contact Me
+                  </Link>
+                  <a href={siteConfig.socials.github} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                    <Github size={16} /> GitHub
+                  </a>
+                  <a href={siteConfig.socials.linkedin} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                    <Linkedin size={16} /> LinkedIn
+                  </a>
+                </div>
+              </motion.div>
 
-          <motion.div variants={riseIn} className="text-center mt-12">
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 text-[var(--primary)] hover:text-[var(--primary-600)] transition-colors font-medium focus-ring rounded-lg px-3 py-2"
-            >
-              View All Skills & Experience
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
-        </motion.div>
-      </Section>
+              {/* Highlights */}
+              <motion.div variants={riseIn}>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {highlights.map((h) => (
+                    <div key={h.label} className="card p-5">
+                      <div className="text-2xl font-bold text-[var(--primary)] mb-1">{h.value}</div>
+                      <div className="font-semibold text-[var(--text)] text-sm mb-1">{h.label}</div>
+                      <div className="text-xs text-[var(--muted)]">{h.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
 
-      {/* Featured Projects Section */}
-      <Section id="projects" background="muted">
-        <motion.div
-          variants={staggerWrap}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <motion.div variants={riseIn} className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[var(--text)] mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-              Here are some of my recent projects that showcase my skills and passion for creating innovative solutions
-            </p>
-          </motion.div>
+              {/* Experience */}
+              <motion.div variants={riseIn}>
+                <h2 className="text-base font-bold text-[var(--text)] mb-4 uppercase tracking-wide opacity-60">Experience</h2>
+                <div className="space-y-0">
+                  {experience.map((e) => (
+                    <div key={e.role} className="flex items-start justify-between gap-4 py-3 border-b border-white/5 last:border-0">
+                      <div>
+                        <span className="font-medium text-[var(--text)] text-sm">{e.role}</span>
+                        <span className="text-[var(--muted)] text-sm"> · {e.org}</span>
+                      </div>
+                      <span className="text-xs text-[var(--muted)] shrink-0 pt-0.5">{e.period}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                featured={index === 0}
-                index={index}
-              />
-            ))}
-          </div>
+              {/* Explore — hidden on desktop (shown in right column) */}
+              <motion.div variants={riseIn} className="lg:hidden">
+                <h2 className="text-base font-bold text-[var(--text)] mb-4 uppercase tracking-wide opacity-60">Explore</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <Link to="/projects" className="card p-5 hover:border-[var(--primary)]/40 transition-colors group">
+                    <div className="font-semibold text-[var(--text)] group-hover:text-[var(--primary)] transition-colors mb-1">Projects</div>
+                    <div className="text-sm text-[var(--muted)]">9+ projects — full-stack, ML, IoT</div>
+                  </Link>
+                  <Link to="/services" className="card p-5 hover:border-[var(--primary)]/40 transition-colors group">
+                    <div className="font-semibold text-[var(--text)] group-hover:text-[var(--primary)] transition-colors mb-1">Services</div>
+                    <div className="text-sm text-[var(--muted)]">Web development, e-commerce & more</div>
+                  </Link>
+                  <Link to="/contact" className="card p-5 hover:border-[var(--primary)]/40 transition-colors group">
+                    <div className="font-semibold text-[var(--text)] group-hover:text-[var(--primary)] transition-colors mb-1">Contact</div>
+                    <div className="text-sm text-[var(--muted)]">WhatsApp, email, or phone</div>
+                  </Link>
+                </div>
+              </motion.div>
 
-          <motion.div variants={riseIn} className="text-center">
-            <motion.div {...press}>
-              <Link
-                to="/projects"
-                className="btn-primary"
-              >
-                View All Projects
-                <ArrowRight size={18} />
-              </Link>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </Section>
-
-      {/* Achievements Timeline */}
-      <Section id="achievements">
-        <motion.div
-          variants={staggerWrap}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <motion.div variants={riseIn} className="text-center mb-16">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Star className="text-[var(--primary)]" size={24} />
-              <h2 className="text-3xl lg:text-4xl font-bold text-[var(--text)]">
-                Achievements & Recognition
-              </h2>
             </div>
-            <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-              Milestones and recognition that mark my journey as a developer
-            </p>
-          </motion.div>
 
-          <Timeline items={featuredAchievements} />
-        </motion.div>
-      </Section>
+            {/* ── RIGHT COLUMN (desktop sidebar) ── */}
+            <motion.div variants={riseIn} className="space-y-8 lg:pt-2">
 
-      {/* Services Preview */}
-      <Section id="services" background="muted">
-        <motion.div
-          variants={staggerWrap}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <motion.div variants={riseIn} className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[var(--text)] mb-4">
-              How I Can Help You
-            </h2>
-            <p className="text-xl text-[var(--muted)] max-w-2xl mx-auto">
-              From web development to restaurant tech solutions, I provide comprehensive services to bring your ideas to life
-            </p>
-          </motion.div>
+              {/* Skills */}
+              <div className="card p-6">
+                <h2 className="text-base font-bold text-[var(--text)] mb-4 uppercase tracking-wide opacity-60">Skills</h2>
+                <div className="space-y-3">
+                  {skills.map((group) => (
+                    <div key={group.label} className="flex flex-wrap items-start gap-x-3 gap-y-1.5">
+                      <span className="text-xs font-semibold text-[var(--primary)] w-16 shrink-0 pt-0.5">{group.label}</span>
+                      <div className="flex flex-wrap gap-1">
+                        {group.items.map((item) => (
+                          <span key={item} className="px-1.5 py-0.5 text-xs bg-white/5 border border-white/10 rounded text-[var(--muted)]">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredServices.map((service, index) => (
-              <ServiceCard
-                key={service.id}
-                service={service}
-                index={index}
-              />
-            ))}
-          </div>
+              {/* Education */}
+              <div className="card p-6">
+                <h2 className="text-base font-bold text-[var(--text)] mb-3 uppercase tracking-wide opacity-60">Education</h2>
+                <div className="font-semibold text-[var(--text)] text-sm">B.Sc. Computer Engineering</div>
+                <div className="text-xs text-[var(--muted)] mt-1">German Jordanian University (GJU)</div>
+                <div className="text-xs text-[var(--muted)]">2023 – Present</div>
+              </div>
 
-          <motion.div variants={riseIn} className="text-center">
-            <motion.div {...press}>
-              <Link
-                to="/services"
-                className="btn-primary"
-              >
-                View All Services
-                <ArrowRight size={18} />
-              </Link>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </Section>
-
-      {/* CTA Section */}
-      <Section padding="large">
-        <motion.div
-          variants={staggerWrap}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <motion.div variants={riseIn} className="max-w-4xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[var(--text)] mb-6">
-              Ready to Build Something
-              <span className="text-[var(--primary)]"> Amazing</span>?
-            </h2>
-            
-            <p className="text-xl text-[var(--muted)] mb-8 leading-relaxed">
-              Let's discuss your project and create a solution that exceeds your expectations. 
-              From concept to deployment, I'm here to help you succeed.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <motion.div {...press}>
-                <Link
-                  to="/contact"
-                  className="btn-primary text-lg px-8 py-4"
-                >
-                  Start Your Project
-                  <ArrowRight size={20} />
+              {/* Explore cards — desktop only */}
+              <div className="hidden lg:block space-y-3">
+                <h2 className="text-base font-bold text-[var(--text)] mb-4 uppercase tracking-wide opacity-60">Explore</h2>
+                <Link to="/projects" className="card p-4 hover:border-[var(--primary)]/40 transition-colors group flex items-center justify-between">
+                  <div>
+                    <div className="font-semibold text-sm text-[var(--text)] group-hover:text-[var(--primary)] transition-colors">Projects</div>
+                    <div className="text-xs text-[var(--muted)]">9+ full-stack, ML & IoT projects</div>
+                  </div>
+                  <span className="text-[var(--primary)] text-lg">→</span>
                 </Link>
-              </motion.div>
-              
-              <motion.div {...press}>
-                <a
-                  href={siteConfig.socials.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary text-lg px-8 py-4"
-                >
-                  WhatsApp Chat
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.688"/>
-                  </svg>
-                </a>
-              </motion.div>
-            </div>
-          </motion.div>
+                <Link to="/services" className="card p-4 hover:border-[var(--primary)]/40 transition-colors group flex items-center justify-between">
+                  <div>
+                    <div className="font-semibold text-sm text-[var(--text)] group-hover:text-[var(--primary)] transition-colors">Services</div>
+                    <div className="text-xs text-[var(--muted)]">Web dev, e-commerce & more</div>
+                  </div>
+                  <span className="text-[var(--primary)] text-lg">→</span>
+                </Link>
+                <Link to="/contact" className="card p-4 hover:border-[var(--primary)]/40 transition-colors group flex items-center justify-between">
+                  <div>
+                    <div className="font-semibold text-sm text-[var(--text)] group-hover:text-[var(--primary)] transition-colors">Contact</div>
+                    <div className="text-xs text-[var(--muted)]">WhatsApp, email, or phone</div>
+                  </div>
+                  <span className="text-[var(--primary)] text-lg">→</span>
+                </Link>
+              </div>
+
+            </motion.div>
+          </div>
+
         </motion.div>
-      </Section>
+      </div>
     </main>
   )
 }

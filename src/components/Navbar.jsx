@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn, throttle } from '../lib/utils'
 import { fadeIn, riseIn } from '../lib/motion'
-import ThemeToggle from './ThemeToggle'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,8 +14,8 @@ const Navbar = () => {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Achievements', href: '/achievements' },
     { name: 'Services', href: '/services' },
-    { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ]
 
@@ -123,13 +122,11 @@ const Navbar = () => {
               ))}
             </motion.div>
 
-            {/* Theme Toggle & Mobile Menu Button */}
+            {/* Mobile Menu Button */}
             <motion.div 
               variants={riseIn}
               className="flex items-center gap-2"
             >
-              <ThemeToggle />
-              
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="md:hidden p-2 rounded-lg text-[var(--text)] hover:bg-white/10 transition-colors focus-ring"
