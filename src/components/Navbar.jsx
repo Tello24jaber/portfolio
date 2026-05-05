@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn, throttle } from '../lib/utils'
-import { fadeIn, riseIn } from '../lib/motion'
+import { riseIn } from '../lib/motion'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -71,7 +71,7 @@ const Navbar = () => {
       </a>
 
       <motion.header
-        variants={fadeIn}
+        variants={riseIn}
         initial="hidden"
         animate="show"
         className={cn(
@@ -92,20 +92,17 @@ const Navbar = () => {
               : 'bg-[var(--surface)]/80 backdrop-blur-md'
           )}>
             {/* Logo */}
-            <motion.div variants={riseIn}>
+            <div>
               <Link
                 to="/"
                 className="text-2xl font-bold text-[var(--primary)] hover:text-[var(--primary-600)] transition-colors focus-ring rounded-lg px-2 py-1"
               >
                 Talal
               </Link>
-            </motion.div>
+            </div>
 
             {/* Desktop Navigation */}
-            <motion.div 
-              variants={riseIn}
-              className="hidden md:flex items-center space-x-1"
-            >
+            <div className="hidden md:flex items-center space-x-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -120,13 +117,10 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-            </motion.div>
+            </div>
 
             {/* Mobile Menu Button */}
-            <motion.div 
-              variants={riseIn}
-              className="flex items-center gap-2"
-            >
+            <div className="flex items-center gap-2">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="md:hidden p-2 rounded-lg text-[var(--text)] hover:bg-white/10 transition-colors focus-ring"
@@ -135,7 +129,7 @@ const Navbar = () => {
               >
                 {isOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
-            </motion.div>
+            </div>
           </div>
         </nav>
 
